@@ -9,7 +9,7 @@ export default function App() {
     { name: 'Diana', age: 19, grade: 'D' },
   ];
 
-  // TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
+  // ✅ TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
   const filteredStudents = students.filter((student) => student.age >= 18);
 
   const onClickHandler = (student) => {
@@ -23,16 +23,23 @@ export default function App() {
     <div>
       <h1>학생 목록</h1>
       <ul>
-        {/* TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
+        {/* ✅ TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
+        {/* ✅ TODO: 학생이름을 클릭하면 나이와 점수가 alert 돼야 해요.*/}
         {filteredStudents.map((student) => {
           return (
             <li key={uuidv4()} onClick={() => onClickHandler(student)} className='student_name'>
               {student.name}
             </li>
-           
           );
         })}
-        {/* TODO: 학생이름을 클릭하면 나이와 점수가 alert 돼야 해요.*/}
+        {/* idx 이용 */}
+        {/* {filteredStudents.map((student, idx) => {
+          return (
+            <li key={idx} onClick={() => onClickHandler(student)} className='student_name'>
+              {student.name}
+            </li>
+          );
+        })} */}
       </ul>
     </div>
   );
